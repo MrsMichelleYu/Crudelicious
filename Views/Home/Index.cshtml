@@ -1,0 +1,34 @@
+﻿@model List<Dish>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crudelicious</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+    <a id=AddDish href="/new">Add a Dish</a>
+    <h1>Welcome to CRUDelicious</h1>
+    <br>
+    <h2>Check out some recent dishes!</h2>
+    <br>
+    @foreach(var dish in Model)
+    {
+    <h3><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</h3>
+    }
+</body>
+</html>
+
+
+
+<!-- @{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> -->

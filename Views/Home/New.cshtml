@@ -1,0 +1,65 @@
+@model Dish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crudelicious</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/new.css"/>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>Add a New Dish!</h1>
+    <br>
+    <div class="container">
+        <form asp-action="Add" asp-controller="Home" method="post">
+            <div class="row">
+                <div class="col-sm">
+                <span asp-validation-for="Chef" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Chef">Chef's Name</label>
+                    <input type="text" class="form-control" id="Chef" asp-for="Chef">
+                </div>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Name">Name of Dish</label>
+                    <input type="text" class="form-control" id="Name" asp-for="Name">
+                </div>
+                <span asp-validation-for="Calories" class="text-danger"></span>
+                <div class="form-group">
+                    <label for="Calories"># of Calories:</label>
+                    <input type="text" class="form-control" id="Calories" asp-for="Calories">
+                </div>
+            </div>
+            <br>
+            <div class="col-sm">
+                <span asp-validation-for="Tastiness" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Tastiness">Tastiness</label>
+                    <select class="form-control" id="Tastiness" asp-for="Tastiness">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm">
+                <span asp-validation-for="Description" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <textarea class="form-control" id="Description" rows="3" asp-for="Description"></textarea>
+                </div>
+                <button type="submit">Add Dish</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crudelicious</title>
+    <link rel="stylesheet" href="~/css/description.css"/>
+</head>
+<body>
+    <a href="/">Home</a>
+    <h1>@Model.Name</h1>
+    <h3>@Model.Chef</h3>
+    <br>
+    <h4>@Model.Description</h4>
+    <br>
+    <h4>Calories: @Model.Calories</h4>
+    <h4>Tastiness: @Model.Tastiness</h4>
+    <br>
+    <button><a href="/delete/@Model.DishId">Delete</a></button>
+    <button><a href="/edit/@Model.DishId">Edit</a></button>
+</body>
+</html>
